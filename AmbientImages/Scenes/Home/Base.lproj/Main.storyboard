@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AmbientImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ENa-JP-9Yo">
+                                <rect key="frame" x="796" y="24" width="328" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Feed"/>
+                                    <segment title="Search"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94w-bb-eMV">
+                                <rect key="frame" x="0.0" y="117" width="1920" height="963"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="94w-bb-eMV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RBn-Gv-agH"/>
+                            <constraint firstAttribute="bottom" secondItem="94w-bb-eMV" secondAttribute="bottom" id="RGp-mL-V0a"/>
+                            <constraint firstItem="ENa-JP-9Yo" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="fDs-ih-uMn"/>
+                            <constraint firstAttribute="trailing" secondItem="94w-bb-eMV" secondAttribute="trailing" id="it9-iV-6Xs"/>
+                            <constraint firstItem="ENa-JP-9Yo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="24" id="kBE-cc-Ri7"/>
+                            <constraint firstItem="94w-bb-eMV" firstAttribute="top" secondItem="ENa-JP-9Yo" secondAttribute="bottom" constant="24" id="pu3-gA-dwX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="childContainer" destination="94w-bb-eMV" id="vYM-D4-I1W"/>
+                        <outlet property="segmentedControl" destination="ENa-JP-9Yo" id="qyQ-kX-QL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="-84"/>
+        </scene>
+    </scenes>
+</document>
