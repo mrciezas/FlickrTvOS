@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  AmbientImages
+
+  Created by Christian Cieza on 23/09/21.
+  
+*/
+
+
+// Generic
+"retry" = "Reintentar";
+
+// Search
+"no_search_result_for" = "No se encontro resultados para";
+"search_result_for" = "Resultados para";
+
+// Home
+"trending_now_on_flickr" = "Tendencia ahora en Flickr";
+
+// Network
+"invalid_response" = "Respuesta inválida";
+"something_happened" = "Algo ocurrio";
