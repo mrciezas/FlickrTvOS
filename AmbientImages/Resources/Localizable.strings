@@ -6,4 +6,17 @@
   
 */
 
-"Retry" = "Retry";
+
+// Generic
+"retry" = "Retry";
+
+// Search
+"no_search_result_for" = "No search results for";
+"search_result_for" = "Search results for";
+
+// Home
+"trending_now_on_flickr" = "Trending now on Flickr";
+
+// Network
+"invalid_response" = "Invalid response";
+"something_happened" = "Something happened";

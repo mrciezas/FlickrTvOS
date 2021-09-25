@@ -29,10 +29,9 @@ class NetworkSession {
                 return completion(.failure(error))
             }
             guard let response = response as? HTTPURLResponse else {
-                return completion(.failure(AmbError.customMessageError(message: "Invalid response")))
+                return completion(.failure(AmbError.customMessageError(message: StaticText.invalidResponse)))
             }
             if (200...299).contains(response.statusCode), let data = data {
-                print(String(data: data, encoding: .utf8) ?? "")
                 let decodeResult = Result { try request.decode(data) }
                 completion(decodeResult)
             } else {

@@ -12,9 +12,9 @@ class SearchViewModel: PhotosListViewModel, ObservableObject, Identifiable {
     var title: String {
         guard let text = searchText, !text.isEmpty else { return "" }
         if let pagination = pagination, pagination.total == 0 {
-            return "No search results for \"\(text)\"."
+            return StaticText.noSearchResultFor + " \"\(text)\""
         }
-        return "Search results for \"\(text)\""
+        return StaticText.searchResultFor + " \"\(text)\""
     }
     private var searchText: String?
     private(set) var pagination: Pagination?

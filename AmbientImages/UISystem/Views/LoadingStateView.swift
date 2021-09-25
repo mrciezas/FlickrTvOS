@@ -18,13 +18,15 @@ class LoadingStateView: UIView {
         $0.font = .preferredFont(forTextStyle: .callout)
         $0.textColor = .white
         $0.numberOfLines = 0
+        $0.isHidden = true
     }
 
     private let retryButton = configure(UIButton.init(type: .roundedRect)) {
-        $0.setTitle("Retry", for: .normal)
+        $0.setTitle(StaticText.retry, for: .normal)
         $0.contentHorizontalAlignment = .fill
         $0.contentVerticalAlignment = .fill
         $0.role = .primary
+        $0.isHidden = true
     }
 
     private let contentStackView = configure(UIStackView()) {

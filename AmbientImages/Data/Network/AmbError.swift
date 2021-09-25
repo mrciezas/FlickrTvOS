@@ -14,7 +14,7 @@ enum AmbError: Error {
 
     var localizedDescription: String {
         switch self {
-        case .requestError: return "Something happened"
+        case .requestError: return StaticText.somethingHappened
         case .customMessageError(let message): return message
         }
     }

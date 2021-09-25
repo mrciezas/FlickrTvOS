@@ -10,7 +10,7 @@ import Combine
 
 class RecentPhotosViewModel: PhotosListViewModel {
 
-    var title: String { "Trending now on Flickr" }
+    let title: String = StaticText.trendinNowOnFlickr
     private(set) var pagination: Pagination?
     @Published private(set) var photos: [FlickrPhoto] = []
     var photosPublisher: Published<[FlickrPhoto]>.Publisher { $photos }
