@@ -17,29 +17,30 @@ class SearchViewController: UIViewController {
         return viewController
     }()
 
-    @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var childContainer: UIView!
+    var photosCollectionView: UICollectionView { photosViewController.collectionView }
 
     private var cancellables: [AnyCancellable] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addViewController(photosViewController)
-        setupViewBindings()
     }
 
     private func addViewController(_ viewController: UIViewController) {
         addChild(viewController)
         viewController.didMove(toParent: self)
-        childContainer.addSubview(viewController.view)
+        view.addSubview(viewController.view)
         viewController.view.pinToSuperView()
     }
 
-    private func setupViewBindings() {
-        textField.publisher(for: \.text)
-            .sink { [weak self] (text) in
-                self?.searchViewModel?.search(with: text)
-            }.store(in: &cancellables)
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        let text = searchController.searchBar.text
+        searchViewModel?.search(with: text)
     }
 
 }

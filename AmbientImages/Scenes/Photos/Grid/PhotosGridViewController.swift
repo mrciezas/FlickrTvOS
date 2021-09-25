@@ -10,7 +10,12 @@ import Combine
 
 class PhotosGridViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+
     @IBOutlet weak var loadingView: LoadingStateView!
 
     var viewModel: PhotosListViewModel!
@@ -31,6 +36,8 @@ class PhotosGridViewController: UIViewController {
         // LoadinView
         loadingView.addTargetForRetryButton(target: self, action: #selector(didTapRetryButton))
         // CollectionView
+        view.addSubview(collectionView)
+        collectionView.pinToSuperView()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.remembersLastFocusedIndexPath = true

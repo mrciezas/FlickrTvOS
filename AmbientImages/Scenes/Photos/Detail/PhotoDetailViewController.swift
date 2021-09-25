@@ -42,7 +42,8 @@ class PhotoDetailViewController: UIViewController {
         viewModel.$state
             .sink { [weak self] state in
                 self?.handleState(state)
-        }.store(in: &cancellables)
+            }.store(in: &cancellables)
+
         viewModel.$currentImageInfo
             .compactMap { $0 }
             .sink { [weak self] info in

@@ -18,6 +18,7 @@ class SearchViewModel: PhotosListViewModel, ObservableObject, Identifiable {
     }
     private var searchText: String?
     private(set) var pagination: Pagination?
+    private var searchTimer: Timer?
     @Published private(set) var photos: [FlickrPhoto] = []
     var photosPublisher: Published<[FlickrPhoto]>.Publisher { $photos }
     @Published var mainState: State = .start
@@ -45,11 +46,17 @@ class SearchViewModel: PhotosListViewModel, ObservableObject, Identifiable {
     }
 
     func search(with text: String?) {
-        guard let text = text, !text.isEmpty else { return }
-        self.searchText = text
-        self.pagination = nil
-        self.photos = []
-        loadPage(0)
+        guard let text = text, !text.isEmpty, text != searchText else { return }
+        if let timer = searchTimer, timer.isValid {
+            timer.invalidate()
+        }
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            self.searchText = text
+            self.pagination = nil
+            self.photos = []
+            self.loadPage(0)
+        }
     }
 
 }

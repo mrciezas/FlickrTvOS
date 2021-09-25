@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         viewController.viewModel = RecentPhotosViewModel()
         return viewController
     }()
-    private lazy var searchViewController: SearchViewController = .instantiate()
+    private lazy var searchViewController: PhotosSearchContainerViewController = .instantiate()
 
     override var preferredFocusEnvironments: [UIFocusEnvironment] { [segmentedControl, childContainer] }
 

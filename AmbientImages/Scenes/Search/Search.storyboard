@@ -19,24 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gG-mw-YEk">
-                                <rect key="frame" x="672" y="60" width="576" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="ObE-B9-W6F"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="webSearch" returnKeyType="go"/>
-                            </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="al0-Pe-4qf">
-                                <rect key="frame" x="0.0" y="156" width="1920" height="924"/>
+                                <rect key="frame" x="0.0" y="60" width="1920" height="1020"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1E9-iD-b6s"/>
                         <constraints>
-                            <constraint firstItem="8gG-mw-YEk" firstAttribute="width" secondItem="1rw-Rv-bXw" secondAttribute="width" multiplier="0.3" id="5Rx-h3-tHI"/>
-                            <constraint firstItem="al0-Pe-4qf" firstAttribute="top" secondItem="8gG-mw-YEk" secondAttribute="bottom" constant="24" id="6Yy-NZ-QGa"/>
-                            <constraint firstItem="8gG-mw-YEk" firstAttribute="top" secondItem="1E9-iD-b6s" secondAttribute="top" id="Gms-3v-MRO"/>
-                            <constraint firstItem="8gG-mw-YEk" firstAttribute="centerX" secondItem="1E9-iD-b6s" secondAttribute="centerX" id="f5s-EL-gta"/>
+                            <constraint firstItem="al0-Pe-4qf" firstAttribute="top" secondItem="1E9-iD-b6s" secondAttribute="top" id="TZA-my-cj7"/>
                             <constraint firstAttribute="bottom" secondItem="al0-Pe-4qf" secondAttribute="bottom" id="gdy-OL-ShA"/>
                             <constraint firstAttribute="trailing" secondItem="al0-Pe-4qf" secondAttribute="trailing" id="iM6-MQ-SMY"/>
                             <constraint firstItem="al0-Pe-4qf" firstAttribute="leading" secondItem="1rw-Rv-bXw" secondAttribute="leading" id="jJg-j2-c7d"/>
@@ -44,7 +33,6 @@
                     </view>
                     <connections>
                         <outlet property="childContainer" destination="al0-Pe-4qf" id="5qc-U4-NRS"/>
-                        <outlet property="textField" destination="8gG-mw-YEk" id="VfJ-Iy-FKL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Iy-HK-8Vo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

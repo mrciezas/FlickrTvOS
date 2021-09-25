@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59045BA926FE903A00E9C282 /* PhotosSearchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59045BA826FE903A00E9C282 /* PhotosSearchContainerViewController.swift */; };
+		59045BAC26FE917400E9C282 /* PhotosSearchContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59045BAB26FE917400E9C282 /* PhotosSearchContainer.storyboard */; };
 		59112EAF26F95B86003B0A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59112EAE26F95B86003B0A41 /* AppDelegate.swift */; };
 		59112EB126F95B86003B0A41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59112EB026F95B86003B0A41 /* HomeViewController.swift */; };
 		59112EB426F95B86003B0A41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59112EB226F95B86003B0A41 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59045BA826FE903A00E9C282 /* PhotosSearchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchContainerViewController.swift; sourceTree = "<group>"; };
+		59045BAB26FE917400E9C282 /* PhotosSearchContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosSearchContainer.storyboard; sourceTree = "<group>"; };
 		59112EAB26F95B86003B0A41 /* AmbientImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmbientImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59112EAE26F95B86003B0A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59112EB026F95B86003B0A41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59045BA626FE8F7C00E9C282 /* SearchContainer */ = {
+			isa = PBXGroup;
+			children = (
+				59045BA826FE903A00E9C282 /* PhotosSearchContainerViewController.swift */,
+				59045BAB26FE917400E9C282 /* PhotosSearchContainer.storyboard */,
+			);
+			path = SearchContainer;
+			sourceTree = "<group>";
+		};
 		59112EA226F95B86003B0A41 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 		59112EC226F95DD8003B0A41 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				59045BA626FE8F7C00E9C282 /* SearchContainer */,
 				59112EC926F95EBD003B0A41 /* SearchViewController.swift */,
 				59DE06A526FBD2670032AC83 /* SearchViewModel.swift */,
 				59DE06A026FBCA900032AC83 /* Search.storyboard */,
@@ -382,6 +396,7 @@
 			files = (
 				59112EB926F95B88003B0A41 /* LaunchScreen.storyboard in Resources */,
 				59112EB626F95B88003B0A41 /* Assets.xcassets in Resources */,
+				59045BAC26FE917400E9C282 /* PhotosSearchContainer.storyboard in Resources */,
 				59112ECE26F95F58003B0A41 /* PhotosGrid.storyboard in Resources */,
 				59CE560D26FD4B8A00CDB432 /* Localizable.strings in Resources */,
 				59DE06A126FBCA900032AC83 /* Search.storyboard in Resources */,
@@ -441,6 +456,7 @@
 				59112ECA26F95EBD003B0A41 /* SearchViewController.swift in Sources */,
 				59DE06A626FBD2670032AC83 /* SearchViewModel.swift in Sources */,
 				59CE561F26FD4F6400CDB432 /* URLRequest+Extensions.swift in Sources */,
+				59045BA926FE903A00E9C282 /* PhotosSearchContainerViewController.swift in Sources */,
 				59CE562A26FD635200CDB432 /* State.swift in Sources */,
 				59112F0326FABD76003B0A41 /* ImageLoader.swift in Sources */,
 				59DE06D426FC079A0032AC83 /* PhotoDetailViewModel.swift in Sources */,

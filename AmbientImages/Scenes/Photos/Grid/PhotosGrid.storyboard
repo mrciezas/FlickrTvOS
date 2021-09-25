@@ -19,17 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-iL-dkP">
-                                <rect key="frame" x="0.0" y="60" width="1920" height="960"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zsl-pS-Alq">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-EA-drA" customClass="LoadingStateView" customModule="AmbientImages" customModuleProvider="target">
                                 <rect key="frame" x="643" y="362" width="634" height="356"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,17 +30,12 @@
                         <viewLayoutGuide key="safeArea" id="tyI-HI-RrO"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="W4G-iL-dkP" firstAttribute="leading" secondItem="VEI-kV-izv" secondAttribute="leading" id="C8b-sH-GKy"/>
-                            <constraint firstItem="W4G-iL-dkP" firstAttribute="top" secondItem="tyI-HI-RrO" secondAttribute="top" id="DBc-82-0dQ"/>
-                            <constraint firstItem="tyI-HI-RrO" firstAttribute="bottom" secondItem="W4G-iL-dkP" secondAttribute="bottom" id="ESi-Pq-5dn"/>
                             <constraint firstItem="Ou0-EA-drA" firstAttribute="centerX" secondItem="tyI-HI-RrO" secondAttribute="centerX" id="bBT-S0-mNh"/>
-                            <constraint firstAttribute="trailing" secondItem="W4G-iL-dkP" secondAttribute="trailing" id="eBx-P3-wTH"/>
                             <constraint firstItem="Ou0-EA-drA" firstAttribute="centerY" secondItem="tyI-HI-RrO" secondAttribute="centerY" id="k3A-hA-4xH"/>
                             <constraint firstItem="Ou0-EA-drA" firstAttribute="width" secondItem="VEI-kV-izv" secondAttribute="width" multiplier="0.33" id="o5u-S4-yt5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="W4G-iL-dkP" id="r0c-kf-eW1"/>
                         <outlet property="loadingView" destination="Ou0-EA-drA" id="diq-tl-ydE"/>
                     </connections>
                 </viewController>
