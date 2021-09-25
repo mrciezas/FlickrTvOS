@@ -14,7 +14,6 @@ struct ImageRequest: Request {
 
     let baseUrl: URL
     let method: HTTPMethod = .get
-    let path: String = ""
     let urlQueryItems: [URLQueryItem]? = []
     var decode: (Data) throws -> Response { customDecode }
 

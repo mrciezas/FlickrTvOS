@@ -25,6 +25,7 @@ protocol BaseRequest {
 extension BaseRequest {
 
     var baseUrl: URL { Enviroment.mainURL }
+    var path: String { "" }
 
 }
 

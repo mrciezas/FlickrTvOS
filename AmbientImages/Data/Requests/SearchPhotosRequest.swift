@@ -11,7 +11,6 @@ struct SearchPhotosRequest: Request {
 
     typealias Response = PhotosList
 
-    let path: String = "services/rest/"
     var method: HTTPMethod = .get
     var urlQueryItems: [URLQueryItem]?
 

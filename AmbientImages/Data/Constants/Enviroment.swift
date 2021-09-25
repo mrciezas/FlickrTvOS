@@ -9,7 +9,7 @@ import Foundation
 
 struct Enviroment {
 
-    static let mainURL = URL(string: "https://www.flickr.com/")!
+    static let mainURL = URL(string: "https://www.flickr.com/services/rest/")!
     static let apiKey = "5d8e18a4f34a21305b32c8b84559f5eb" // Should be obfuscated
 
 }
