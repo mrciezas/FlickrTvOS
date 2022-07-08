@@ -10,6 +10,7 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
 
     private let imageView: UIImageView = configure(UIImageView()) {
+        $0.contentMode = .scaleAspectFill
         $0.backgroundColor = .systemGray
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -56,6 +57,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupView() {
+        clipsToBounds = true
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 2
         addSubview(imageView)

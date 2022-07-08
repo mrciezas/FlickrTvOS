@@ -16,6 +16,7 @@ class SearchViewModel: PhotosListViewModel, ObservableObject, Identifiable {
         }
         return StaticText.searchResultFor + " \"\(text)\""
     }
+    var selectedIndexPath: IndexPath?
     private var searchText: String?
     private(set) var pagination: Pagination?
     @Published private(set) var photos: [FlickrPhoto] = []

@@ -27,13 +27,20 @@ class PhotosGridViewController: UIViewController {
         setupView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if viewModel.selectedIndexPath != nil {
+            collectionView.updateFocusIfNeeded()
+            collectionView.reloadData()
+        }
+    }
+
     private func setupView() {
         // LoadinView
         loadingView.addTargetForRetryButton(target: self, action: #selector(didTapRetryButton))
         // CollectionView
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.remembersLastFocusedIndexPath = true
         collectionView.registerdSupplementaryView(ImageListHeaderView.self, kind: .header)
         collectionView.registerCell(ImageCollectionViewCell.self)
         collectionView.registerCell(ImageLoadingCollectionViewCell.self)
@@ -70,7 +77,6 @@ class PhotosGridViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.collectionView.reloadData()
             }.store(in: &cancellables)
-
         viewModel.mainStatePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
@@ -104,7 +110,14 @@ class PhotosGridViewController: UIViewController {
 
     private func presentPhotoDetail(_ selectedIndexPath: IndexPath) {
         let viewController: PhotoDetailViewController = .instantiate()
-        viewController.viewModel = PhotoDetailViewModel(viewModel.photos, selectedIndexPath: selectedIndexPath)
+        let viewModel = PhotoDetailViewModel(viewModel.photos, selectedIndexPath: selectedIndexPath)
+        viewModel.passCurrentIndexPath
+            .receive(on: DispatchQueue.main)
+            .sink { indexPath in
+                self.viewModel.selectedIndexPath = indexPath
+        }.store(in: &cancellables)
+        viewController.viewModel = viewModel
+
         self.present(viewController, animated: true, completion: nil)
     }
 
@@ -171,6 +184,10 @@ extension PhotosGridViewController: UICollectionViewDataSource, UICollectionView
             }
             didTapRetryButton()
         }
+    }
+
+    func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
+        return viewModel.selectedIndexPath
     }
 
 }

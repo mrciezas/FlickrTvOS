@@ -11,6 +11,7 @@ import Combine
 class RecentPhotosViewModel: PhotosListViewModel {
 
     let title: String = StaticText.trendinNowOnFlickr
+    var selectedIndexPath: IndexPath?
     private(set) var pagination: Pagination?
     @Published private(set) var photos: [FlickrPhoto] = []
     var photosPublisher: Published<[FlickrPhoto]>.Publisher { $photos }

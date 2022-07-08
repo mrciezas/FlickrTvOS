@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class PhotoDetailViewModel: ObservableObject, Identifiable {
 
@@ -17,6 +18,7 @@ class PhotoDetailViewModel: ObservableObject, Identifiable {
     @Published var state: State = .start
     @Published var currentImageInfo: (image: UIImage, aspectRatio: Double)?
     private var imageLoadTask: [URL: IndexPath] = [:]
+    var passCurrentIndexPath: PassthroughSubject<IndexPath, Never> = PassthroughSubject<IndexPath, Never>()
 
     init(_ photos: [FlickrPhoto], selectedIndexPath: IndexPath) {
         self.photos = photos
@@ -35,6 +37,7 @@ class PhotoDetailViewModel: ObservableObject, Identifiable {
             selectedIndexPath.row = max(0, selectedIndexPath.row - 1)
         }
         loadImage()
+        passCurrentIndexPath.send(selectedIndexPath)
     }
 
     func reloadImage() {

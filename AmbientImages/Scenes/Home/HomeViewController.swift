@@ -23,12 +23,21 @@ class HomeViewController: UIViewController {
     }()
     private lazy var searchViewController: SearchViewController = .instantiate()
 
-    override var preferredFocusEnvironments: [UIFocusEnvironment] { [segmentedControl, childContainer] }
+    override var preferredFocusEnvironments: [UIFocusEnvironment] { numberOfDisappearings == 0 ?
+        [segmentedControl, childContainer] :
+        [childContainer]
+    }
+    private var numberOfDisappearings = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewBindigs()
         setupBindings()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        numberOfDisappearings += 1
     }
 
     // MARK: - Child ViewControllers

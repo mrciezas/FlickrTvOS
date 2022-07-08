@@ -69,15 +69,7 @@ class PhotoDetailViewController: UIViewController {
     }
 
     private func reloadImageView(with info: (image: UIImage, aspectRatio: Double)) {
-        if let aspectRatioConstraint = aspectRatioConstraint {
-            imageView.removeConstraint(aspectRatioConstraint)
-        }
-        aspectRatioConstraint = imageView.heightAnchor.constraint(
-            equalTo: imageView.widthAnchor,
-            multiplier: CGFloat(info.aspectRatio)
-        )
-        aspectRatioConstraint?.isActive = true
-        self.view.layoutIfNeeded()
+        self.imageView.contentMode = .scaleAspectFit
         self.imageView.image = info.image
     }
 

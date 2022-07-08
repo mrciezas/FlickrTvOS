@@ -13,6 +13,7 @@ protocol PhotosListViewModel: AnyObject {
     var pagination: Pagination? { get }
     var numberOfItems: Int { get }
     var photosPerPage: Int { get }
+    var selectedIndexPath: IndexPath? { get set }
 
     // MARK: - Published
 
